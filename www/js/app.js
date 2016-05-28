@@ -1,4 +1,4 @@
-angular.module('jumpbyte', ['ionic', 'ngCordova', 'jumpbyte.controllers', 'jumpbyte.services'])
+angular.module('jumpbyte', ['ionic', 'ngCordova', 'jumpbyte.controllers', 'jumpbyte.services', 'ngStorage'])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -13,7 +13,12 @@ angular.module('jumpbyte', ['ionic', 'ngCordova', 'jumpbyte.controllers', 'jumpb
     });
   })
 
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+
+    /**
+     * Set tabs position on bottom of screen in android
+     */
+    $ionicConfigProvider.tabs.position('bottom');
 
     $stateProvider
 

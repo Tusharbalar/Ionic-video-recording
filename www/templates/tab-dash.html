@@ -1,5 +1,11 @@
 <ion-view view-title="Camera">
   <ion-content class="padding">
-    
+    <ion-list class="teacher-complaint-list">
+      <ion-item type="item-text-wrap" ng-repeat="video in videos">
+        <video controls='controls' height="200px" width="100%">
+          <source src="{{video.fullPath}}" type="video/mp4">
+        </video>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
