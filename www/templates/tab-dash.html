@@ -1,13 +1,22 @@
 <ion-view view-title="Camera">
   <ion-content class="padding">
     <ion-list class="teacher-complaint-list">
-      <ion-item class="item-remove-animate item-avatar" type="item-text-wrap" ng-repeat="video in videos">
-        <video controls='controls' height="200px" width="100%">
-          <source src="{{video.fullPath}}" type="video/mp4">
-        </video>
-        <h3>{{video.name}}</h3>
-        <h3>{{video.date | date: 'dd-MM-yyyy'}}</h3>
-        <h3>{{video.length}} MB</h3>
+      <ion-item class="item-remove-animate" ng-repeat="video in videos" type="item-text-wrap">
+        <div class="row">
+          <div class="col col-30">
+            <video controls='controls' width="100%">
+        <source src="{{video.fullPath}}" type="video/mp4">
+      </video>
+          </div>
+          <div class="col col-70" style="padding-left: 25px;">
+            <b style="float:left;margin-right:5px;">Name:</b>
+            <h3>{{video.name}}</h3>
+            <b style="float:left">Date:</b>
+            <h3>{{video.date | date: 'dd-MM-yyyy'}}</h3>
+            <b style="float:left">Size:</b>
+            <h3>{{video.length}} MB</h3>
+          </div>
+        </div>
       </ion-item>
     </ion-list>
   </ion-content>
