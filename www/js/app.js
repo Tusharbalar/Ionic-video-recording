@@ -1,4 +1,4 @@
-angular.module('jumpbyte', ['ionic', 'ngCordova', 'jumpbyte.controllers', 'jumpbyte.services', 'ngStorage'])
+angular.module('jumpbyte', ['ionic', 'ngCordova', 'jumpbyte.controllers', 'ngStorage'])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {

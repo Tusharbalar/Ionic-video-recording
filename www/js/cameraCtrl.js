@@ -9,19 +9,15 @@ angular.module('jumpbyte')
       var options = { limit: 1, duration: 15 };
 
       $cordovaCapture.captureVideo(options).then(function (videoData) {
-        
+
+        alert(JSON.stringify(videoData));
 
         $scope.videos.push({
+          name: videoData[0].name,
+          length: parseInt(videoData[0].size/(1024*1024)),
+          date: new Date(),
           fullPath: videoData[0].fullPath
         });
-
-        // $localStorage.fullPath.push(videoData[0].fullPath);
-
-        // alert("video " + JSON.stringify($localStorage.fullPath));
-        // var v = "<video controls='controls'>";
-        // v += "<source src='" + videoData[0].fullPath + "' type='video/mp4'>";
-        // v += "</video>";
-        // document.querySelector("#videoArea").innerHTML = v;
 
       }, function (err) {
         console.log("Error occured" + err);
